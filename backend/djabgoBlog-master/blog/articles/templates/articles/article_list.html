@@ -1,0 +1,17 @@
+{% extends 'base_layout.html' %}
+
+{% block content%}
+<a href="{% url 'subscribe:main'%}">Моя лента подписок</a>
+
+    <div class="articles">
+        {% for article in object_list %}
+            <div class="article">
+
+                <H2><a href="{% url 'articles:detail' pk=article.id %}">{{article.title}}</a></H2>
+                <small>{{article.author}}</small>,
+                <small>{{article.date}} </small>
+                <small><a href="{% url 'articles:detail' pk=article.id %}">читать</a></small>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock%}

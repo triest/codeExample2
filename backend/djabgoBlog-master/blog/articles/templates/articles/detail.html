@@ -1,0 +1,22 @@
+{% extends 'base_layout.html' %}
+
+{% block content%}
+{% if user.is_authenticated %}
+loggin
+ <p><a href="{% url 'articles:subscribe' id=article.author.id %}">Подписаться на пользователя {{article.author}}</a> </p>
+{% endif %}
+
+
+  <p>не подписан</p>
+    <div class="article-detail">
+        <div class="article">
+            <h3>{{article.title}}</h3>
+            <small>{{article.date}}</small>
+            <small>{{article.author}}</small>
+            <p>{{article.description}}</p>
+
+               <p><a href="{% url 'articles:list' %}">Назад</a> </p>
+        </div>
+    </div>
+
+{% endblock%}

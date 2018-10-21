@@ -1,0 +1,18 @@
+{% extends 'base_layout.html' %}
+
+{% block content%}
+
+
+
+  <p>не подписн</p>
+   <div class="article-detail">
+        <div class="article">
+            <h3>{{article.title}}</h3>
+            <small>{{article.date}}</small>
+            <small>{{article.author}}</small>
+            <p>{{article.description}}</p>
+
+               <p><a href="{% url 'articles:list' %}">Назад</a> </p>
+        </div>
+    </div>
+{% endblock%}

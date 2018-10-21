@@ -1,0 +1,15 @@
+
+{% extends 'base_layout.html' %}
+
+{% block content%}
+{% if user.is_authenticated %}
+    <div class="create-article">
+        <h2>Create article</h2>
+    </div>
+    <form  action="{% url 'create2'%}"   method="post">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Send Post">
+    </form>
+  <p><a href="{% url 'list' %}">Back</a> </p>
+{% endblock%}

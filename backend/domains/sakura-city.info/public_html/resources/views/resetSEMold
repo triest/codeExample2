@@ -1,0 +1,40 @@
+@extends('layouts.blog-login', ['title' => 'Сброс пароля по SMS'])
+
+@section('content')
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+              <label>Введите телефон</label>
+                <input type="tel" class="form-control" id="phone" name="phone" onkeypress="return isNumber(event)" required></input>
+                <a class="button green" id="sendSMS" onclick="sendSMS()">Отправить SMS</a><br>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="{{asset('js/vueScripts.js')}}"></script>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+
+
+
+        $('#sendSMS').on('click',function (e) {
+           console.log("click")
+           phone=document.getElementById('phone');
+            //ajax
+            $.post('/findCitys?region_id='+phone,function (data) {
+                $('#city').empty();
+                $.each(data,function (index,subcatObj){
+                    $('#city').append('<option value="'+subcatObj.id+'">'+subcatObj.name+'</option>');
+                })
+            })
+        })
+
+
+
+
+
+    </script>
+
+@endsection

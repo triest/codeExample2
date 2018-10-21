@@ -1,0 +1,22 @@
+body{
+   background-image:url(blueskies.jpg);
+}
+
+cityStyle{
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+   font-size:x-large;
+}
+countryStyle{
+  font-family: Geneva, Helvetica, sans-serif;
+   font-size:smaller;
+}
+
+TempStyle{
+   font-family: Geneva, ,sans-serif;
+   font-size: large;
+}
+
+humidityStyle{
+    font-family: Geneva, ,sans-serif;
+   font-size: large;
+}

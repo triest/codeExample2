@@ -1,0 +1,25 @@
+{% extends 'base_layout.html' %}
+
+{% block content%}
+
+   <p><a href="{% url 'articles:list'%}">К общей ленте</a></p>
+Пользователи, на которых вы подписаны:
+
+<br>
+Лента новостей:
+ <a href="{% url 'subscribe:main'%}">Полная лента</a>
+ <a href="{% url 'subscribe:readed2'%}">Прочитанные посты</a>
+<a href="{% url 'subscribe:unreaded'%}">Не прочитанные посты</a>
+<br>
+<b>{{type}}</b>
+
+        {% for article in object_list %}
+            <div class="article">
+                <H2>{{article.title}}</H2>
+                <p><a href="{% url 'subscribe:detailsub' id=article.id %}">{{article.title}}</a> </p>
+                <p>{{article.author}}</p>
+                <p>{{article.date}} </p>
+                <p><a href="{% url 'subscribe:readed' id=article.id %}">Прочитан</a> </p>
+            </div>
+        {% endfor %}
+{% endblock%}

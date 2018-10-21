@@ -1,8 +1,8 @@
-<?php
+﻿<?php
 class DB {
     private $pdo;
-    public $username=a0188141_task;
-    public $password=a0188141;
+    public $username=*****;
+    public $password=*****;
     public function __construct($host, $dbname, $username, $password) {
         $pdo = new PDO('mysql:host='.localhost.';dbname='.a0188141_task.';charset=utf8', $username, $password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -18,10 +18,3 @@ class DB {
     }
 }
 
-//база и проль и пользователь//a0188141_task
-/*
-Имя базы данных:  	a0188141_task
-Адрес хоста:  	localhost
-Пользователь:  	a0188141_task
-Пароль:  	a0188141
- * */

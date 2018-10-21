@@ -1,0 +1,52 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Blog Home - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://blackrockdigital.github.io/startbootstrap-blog-home/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://blackrockdigital.github.io/startbootstrap-blog-home/css/blog-home.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+  <header>
+         <div class="container">
+
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+      <form class="logout-link" action="{% url 'accounts:logout'%}" method="post">
+                    {% csrf_token %}
+                    <input type="submit" value="logout">
+                </form>
+    <a href="{% url 'articles:create' %}">Создать статью</a>
+
+         </div>
+  </header>
+{% else %}
+  <p>You are not logged in</p>
+         <p><a href="{% url 'accounts:login' %}">Войти</a> </p>
+{% endif %}
+    <div class="container">
+
+       {% block content%}
+        {% endblock%}
+      </div>
+
+    <script src="https://blackrockdigital.github.io/startbootstrap-blog-home/vendor/jquery/jquery.min.js"></script>
+    <script src="https://blackrockdigital.github.io/startbootstrap-blog-home/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

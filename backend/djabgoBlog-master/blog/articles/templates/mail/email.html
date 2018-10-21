@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <div class="articles">
+Уважаемый подписчик!<br>
+По ваше подписке пользователем {{author_name}} опубликована новая     <p><a href="http://127.0.0.1:8000{% url 'articles:detail' id=article.id %}">статья! </a></p>
+   </div>
+
+</body>
+</html>
